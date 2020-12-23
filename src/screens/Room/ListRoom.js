@@ -100,11 +100,12 @@ export default class ListRoom extends Component {
     });
   };
 
-  _onPressAdd() {
-    alert('Add');
+  _onPressAdd({navigation}) {
+      navigation.navigate('AddRoom');
   }
 
   render() {
+    const {navigate} = this.props.navigation
     return (
       <View style={styles.container}>
         <View style={styles.centerView}>
@@ -112,10 +113,10 @@ export default class ListRoom extends Component {
           <TouchableOpacity
             style={{marginRight: 10}}
             underlayColor="tomato"
-            onPress={()=>this._onPressAdd()}>
+            onPress={() => {this.navigate('AddRoom')}}>
             <Image
               style={{width: 35, height: 35}}
-              source={require('../../assets/ic_add_24.png')}
+              source={require('../../assets/add.png')}
             />
           </TouchableOpacity>
         </View>
