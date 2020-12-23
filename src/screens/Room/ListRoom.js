@@ -100,12 +100,10 @@ export default class ListRoom extends Component {
     });
   };
 
-  _onPressAdd({navigation}) {
-      navigation.navigate('AddRoom');
-  }
+
 
   render() {
-    const {navigate} = this.props.navigation
+    const navigation = this.props.navigation;
     return (
       <View style={styles.container}>
         <View style={styles.centerView}>
@@ -113,7 +111,7 @@ export default class ListRoom extends Component {
           <TouchableOpacity
             style={{marginRight: 10}}
             underlayColor="tomato"
-            onPress={() => {this.navigate('AddRoom')}}>
+            onPress={() => navigation.navigate('AddRoom')}>
             <Image
               style={{width: 35, height: 35}}
               source={require('../../assets/add.png')}
